@@ -1,6 +1,15 @@
+import { Monster } from '../../App';
+import { CardSelectorProps } from '../card-selector/card-selector.component';
 import './card.styles.css';
 
-const Card = ({monster:{name,id,username,email},selectedMonster})=>{
+
+type CardProps = {
+  monster: Monster;
+  selectedMonster: CardSelectorProps;
+}
+
+const Card = ({monster,selectedMonster}: CardProps) =>{
+  const {id, name, email, username} = monster;
   return[
     <div className='card-container' key={id}>
       <img 

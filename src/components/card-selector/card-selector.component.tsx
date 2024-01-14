@@ -1,7 +1,13 @@
+import { ChangeEvent } from "react";
+
 import './card-selector.styles.css';
 
+export type CardSelectorProps = {
+  className: string;
+  onChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => void;
+}
 
-const CardSelector = ({onChangeHandler})=>{
+const CardSelector = ({onChangeHandler}: CardSelectorProps)=>{
   return[
     <div key={'card-selector'} className='select-container'>
       <label className='calisto f4 lightest-blue'>Select your RoboHash </label>
